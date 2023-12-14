@@ -17,11 +17,24 @@
   </form>
 <script>
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-
+// storing data 
 const cities = [] ;
 // const data = fetch(endpoint).then( blob => blob.json()).then(data => cities = data); this iis way you can assign data to variable just change const in to var var cities = [] ;
+// data storing and managing
 const data = fetch(endpoint).then( blob => blob.json()).then(data => cities.push(...data));
-// console.log(data) 
+
+// for searching data   if u want to use in console findMatches('b', cities) thhrough this u can
+function findMatches(wordToMatch, cities) {
+
+  return cities.filter( place =>   {
+// create regular expression for searching data
+const regex = new RegExp(wordToMatch , 'gi')  // wordToMatch word u pass for search 'gi' = g is for global and i = insensitive 
+
+    return place.city.match(regex)  // access cities properties and get city 
+  })
+}
+
+
 
 </script>
 </body>
