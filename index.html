@@ -30,7 +30,7 @@ function findMatches(wordToMatch, cities) {
 // create regular expression for searching data
 const regex = new RegExp(wordToMatch , 'gi')  // wordToMatch word u pass for search 'gi' = g is for global and i = insensitive 
 
-    return place.city.match(regex)  // access cities properties and get city 
+    return place.city.match(regex) || place.state.match(regex)// access cities properties and get city  now you can access state also
   })
 }
 
