@@ -20,7 +20,7 @@ const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb
 
 const cities = [] ;
 // const data = fetch(endpoint).then( blob => blob.json()).then(data => cities = data); this iis way you can assign data to variable just change const in to var var cities = [] ;
-const data = fetch(endpoint).then( blob => blob.json()).then(data => cities.push(data));
+const data = fetch(endpoint).then( blob => blob.json()).then(data => cities.push(...data));
 // console.log(data) 
 
 </script>
